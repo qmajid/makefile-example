@@ -8,6 +8,7 @@ DEPS = Makefile.depend
 INCLUDES = -I./include
 CXXFLAGS = -O2 -Wall $(INCLUDES)
 LDFLAGS = -lm
+VAR1 = "hello cmake"
 
 
 all: $(TARGET)
@@ -25,5 +26,12 @@ depend:
 
 clean:
 	$(RM) $(OBJS) $(TARGET)
+
+tutorial:
+        @# todo: have this actually run some kind of tutorial wizard?
+        echo "Please read the 'Makefile' to go through this tutorial"
+
+var-kept:
+        export foo=majid; echo "foo=[$$foo], value of var is: ${VAR1} "
 
 -include $(DEPS)
